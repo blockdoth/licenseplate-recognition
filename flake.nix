@@ -26,8 +26,22 @@
             echo 'Entering a default shell template'
           ";
             packages = with pkgs; [
-
-            ];
+                 
+            ] ++
+            (with pkgs.python3Packages; [
+              python
+              jupyter
+              numpy
+              pillow
+              imageio
+              scipy
+              matplotlib
+              notebook
+              scikit-image
+              scikit-learn
+              pandas
+              opencv-python
+            ]);
           };
         }
       );
